@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://*.tableau.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.tableau.com https://placehold.co data:; frame-src https://*.tableau.com; connect-src 'self' https://*.tableau.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfit Buddy: AI Stylist · Solution Design & Process Orchestration · Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- ── Custom Cursor ──────────────────────────────────── -->
+    <div id="c-ring" aria-hidden="true"></div>
+    <div id="c-dot" aria-hidden="true"></div>
+
+    <!-- ─── Floating Pill Nav ──────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="logo">Dimitris<span style="color: var(--green);">.</span>Topalidis</a>
+        <div class="nav-links">
+            <a href="index.html#work">Work</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- ─── Case Study Hero ─────────────────────────────────── -->
+    <header class="cs-hero">
+        <img class="cs-hero-bg" src="/images_portfolio/outfit-buddy.png" alt="" aria-hidden="true">
+        <div class="cs-hero-inner">
+            <div class="reveal">
+                <a href="index.html" class="back-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    All Work
+                </a>
+            </div>
+
+            <div class="cs-meta reveal delay-1">
+                <span class="cs-badge">PwC AI Hackathon · Silver Medal 🥈</span>
+                <span class="cs-tag">Role: Solution Design &amp; Process Orchestration</span>
+                <span class="cs-tag">Problem Framing</span>
+                <span class="cs-tag">AI Product</span>
+                <span class="cs-tag">Cross-functional Coordination</span>
+            </div>
+
+            <h1 class="reveal delay-2">Outfit Buddy:<br>AI Stylist</h1>
+        </div>
+    </header>
+
+    <!-- ─── Article ─────────────────────────────────────────── -->
+    <article class="article">
+
+        <section class="article-section reveal">
+            <h2>01 · The Problem &amp; Concept</h2>
+            <p>
+                The brief was open-ended: use AI to solve a real human problem. Rather than defaulting to a generic
+                chatbot or data interface, we framed the problem around a specific daily friction — deciding what to
+                wear in a way that accounts for environment, schedule, and personal preference simultaneously.
+            </p>
+            <p>
+                Most styling apps focus only on wardrobe. We defined the real problem as <em>context mismatch</em>:
+                a person's outfit decision is influenced by weather, plans, and mood — none of which static apps
+                account for. That framing drove the entire solution design.
+            </p>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>02 · My Contribution: Design &amp; Coordination</h2>
+            <p>
+                My role was not execution-only. I contributed to three distinct areas:
+            </p>
+            <ul
+                style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Problem Framing:</strong>
+                    Defined the product concept and the core use case. Established which user inputs (wardrobe,
+                    weather, plans) were essential and how they relate to each other in the recommendation logic.
+                </li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">User Interaction Flow:</strong>
+                    Mapped the end-to-end interaction: from user onboarding and wardrobe input through to
+                    context-aware recommendation delivery. Identified the decision points and data dependencies at
+                    each step.
+                </li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Process Orchestration:</strong>
+                    Structured the system logic connecting multiple data sources — user profile, wardrobe inventory,
+                    live weather, and calendar context — and coordinated how they feed into the AI recommendation layer.
+                </li>
+            </ul>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>03 · System Logic &amp; Architecture</h2>
+            <p>
+                The technical implementation used <strong>Microsoft Azure</strong> as the orchestration backbone.
+                The key design decision was modularity: rather than a monolithic backend, each data source
+                (weather API, user input, wardrobe database) was isolated as a separate component.
+                This meant a failure in the weather API would not take down the core recommendation engine.
+            </p>
+            <ul
+                style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure OpenAI (GPT-4):</strong>
+                    Stylistic analysis and natural-language interaction.</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure Logic Apps:</strong>
+                    Orchestrating the flow between user input, environmental data, and the recommendation engine.</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure Functions:</strong> Processing
+                    image metadata for outfit context recognition.</li>
+            </ul>
+
+            <figure class="cs-figure reveal-fig">
+                <img src="/images_portfolio/outfit-buddy.png" alt="Outfit Buddy Azure system architecture diagram"
+                    width="860" height="400" loading="lazy">
+                <figcaption>Fig 1 — System diagram: Azure Logic Apps orchestration connecting user input, environmental
+                    data, and the OpenAI recommendation layer.</figcaption>
+            </figure>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>04 · Outcome &amp; Recognition</h2>
+            <p>
+                Awarded the <strong>Silver Medal</strong> by PwC judges for product strategy and cross-functional
+                collaboration. The evaluation criteria centered on how well the team defined a real business problem,
+                designed a coherent solution, and coordinated across different technical domains under time pressure.
+            </p>
+            <div class="callout reveal delay-1">
+                The core lesson: in a hackathon, the teams that win are those who spend the first hour
+                defining the problem clearly — not the ones who start building immediately.
+            </div>
+        </section>
+
+        <!-- ─── Next Project Module ─────────────────────────────── -->
+        <div class="next-project-module reveal"
+            style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+            <p class="section-eyebrow">Up Next</p>
+            <a href="project_3.html" class="bento-card glow-purple"
+                style="min-height: auto; padding: 2rem; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
+                <div>
+                    <span class="card-tag" style="color: var(--text-2);">E-Commerce · MarTech</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem; color: var(--text-1);">Timalfes: Digital-First
+                        Brand Transition</h3>
+                </div>
+                <div class="card-arrow"
+                    style="position: relative; bottom: auto; right: auto; transform: none; background: transparent; border-color: var(--border-hi);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </article>
+
+    <!-- Scroll Progress Back to Top -->
+    <div class="progress-wrap" id="progressWrap">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <div class="arrow-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- ─── Footer ──────────────────────────────────────────── -->
+    <footer>
+        <span>© 2026 Portfolio</span>
+        <a href="index.html">All work →</a>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

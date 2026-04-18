@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://*.tableau.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.tableau.com https://placehold.co data:; frame-src https://*.tableau.com; connect-src 'self' https://*.tableau.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About · Dimitris Topalidis · Business Analyst Portfolio</title>
+    <meta name="description"
+        content="Business Analyst transitioning from Digital Marketing. MSc Applied Informatics student focused on process mapping, decision support, and translating business needs into structured solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- ─── Floating Pill Nav ──────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="logo">Dimitris<span style="color: var(--green);">.</span>Topalidis</a>
+        <div class="nav-links">
+            <a href="index.html#work">Projects</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#work">Projects</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- ── Custom Cursor ──────────────────────────────────── -->
+    <div id="c-ring" aria-hidden="true"></div>
+    <div id="c-dot" aria-hidden="true"></div>
+
+    <!-- ─── Hero ─────────────────────────────────────────── -->
+    <section class="about-hero">
+        <div class="about-hero-inner">
+
+            <div>
+                <p class="section-eyebrow reveal">About me</p>
+                <h1 class="reveal delay-1">Mapping needs.<br>Defining logic.</h1>
+                <p class="pitch reveal delay-2">
+                    MSc Applied Informatics student with a background in Business Administration,
+                    transitioning into Business Analysis by combining business understanding
+                    with hands-on experience in requirements analysis, process structuring, and decision support.
+                </p>
+                <div class="social-links reveal delay-3">
+                    <a href="https://linkedin.com/in/dimitris-topalidis-b46761214/" class="link-hover" target="_blank"
+                        rel="noopener noreferrer">↗ LinkedIn</a>
+                    <a href="https://github.com/DimitrisTop" class="link-hover" target="_blank"
+                        rel="noopener noreferrer">↗
+                        GitHub</a>
+                </div>
+            </div>
+
+            <!-- ── Headshot placeholder — swap src when ready ── -->
+            <div class="headshot-wrap reveal delay-3">
+                <img src="/images_portfolio/profile.png" alt="Profile picture" width="320" height="320">
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- ─── Framework / Methodology Grid ─────────────────── -->
+    <!-- <section class="framework-section">
+        <p class="section-eyebrow reveal">How I Work</p>
+        <h2 class="section-heading reveal delay-1">
+            Framework</h2>
+
+        <div class="framework-grid">
+
+            <div class="framework-card reveal">
+                <div class="fc-icon">🗄️</div>
+                <div class="fc-step">Step 01</div>
+                <div class="fc-title">Data Modeling</div>
+                <p class="fc-desc">Structuring raw, fragmented data into clean, scalable infrastructure. The right model
+                    means every question has an answer — without rebuilding the pipeline each time.</p>
+            </div>
+
+            <div class="framework-card reveal delay-1">
+                <div class="fc-icon">⚙️</div>
+                <div class="fc-step">Step 02</div>
+                <div class="fc-title">Process Engineering</div>
+                <p class="fc-desc">Using BPMN and technical logic to map, diagnose, and remove operational bottlenecks.
+                    Every broken flow is a cost center waiting to be fixed.</p>
+            </div>
+
+            <div class="framework-card reveal delay-2">
+                <div class="fc-icon">📊</div>
+                <div class="fc-step">Step 03</div>
+                <div class="fc-title">Actionable Insights</div>
+                <p class="fc-desc">Translating complex data into decisions stakeholders can act on immediately. Not
+                    dashboards for the sake of dashboards — outputs tied to a specific business question.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div> -->
+
+
+    <!-- ─── Timeline ──────────────────────────────────────── -->
+    <section class="timeline-section">
+        <p class="section-eyebrow reveal">Experience</p>
+        <h2 class="section-heading reveal delay-1">
+            Career Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item current reveal">
+                <div class="t-dot"></div>
+                <div class="t-date">2024 — Present</div>
+                <div class="t-content">
+                    <h3>Digital Marketing Manager @ COMPANY1</h3>
+                    <p>Cross-functional coordination across multiple client accounts — translating performance data
+                        into structured business recommendations for stakeholders. Responsible for KPI definition,
+                        reporting design, and aligning marketing operations with broader business objectives.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-1">
+                <div class="t-dot"></div>
+                <div class="t-date">2023 — 2024</div>
+                <div class="t-content">
+                    <h3>Digital Marketing Coordinator @ COMPANY1</h3>
+                    <p>Owned campaign reporting infrastructure and Meta Ads audience segmentation. Built
+                        the performance analysis layer that the team still uses today — standardizing how
+                        data is gathered, interpreted, and presented to clients.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-3">
+                <div class="t-dot"></div>
+                <div class="t-date">2022</div>
+                <div class="t-content">
+                    <h3>Head Lifeguard</h3>
+                    <p>Led a team of 8 under real-time, high-stakes pressure — fast decisions, clear communication, zero
+                        margin for error. Not a typical CV line, but the clearest proof of how I operate under pressure
+                        and manage people in ambiguous situations.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-2">
+                <div class="t-dot"></div>
+                <div class="t-date">2021</div>
+                <div class="t-content">
+                    <h3>Digital Marketing Intern @ COMPANY3</h3>
+                    <p>GA4 analytics reporting and Google Ads planning. First hands-on exposure to bridging data output
+                        with actual campaign decision-making.</p>
+                </div>
+            </div>
+
+
+
+            <!-- <div class="timeline-item reveal delay-4">
+      <div class="t-dot"></div>
+      <div class="t-date">Education</div>
+      <div class="t-content">
+        <h3>MSc in Applied Informatics — Business Computing</h3>
+        <p>Bridging the gap between information systems and business operations. Coursework spans data engineering, process modeling, and decision intelligence. <em>BSc Thesis: Value Chain &amp; Logistics Optimization</em> — applying operational research to real supply-chain constraints.</p>
+      </div>
+    </div> -->
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ─── Beyond the Data ─────────────────────────────── -->
+    <section class="about-bio-section">
+        <p class="section-eyebrow reveal">Beyond the Data</p>
+        <h2 class="section-heading reveal delay-1">The Human Element</h2>
+        <div class="bio-content reveal delay-2">
+            <p class="bio-para-gap">Data is objective, but business is inherently human. Behind every
+                conversion rate, dropout funnel, and ROAS target, there is a person making a decision.</p>
+            <p>My foundational experience as a Head Lifeguard instilled a core value of responsibility and calm
+                decision-making under high-stakes pressure. Today, that same operational clarity guides my analytical
+                work: stripping away the panic and the noise, aligning teams, and systematically driving growth without
+                losing sight of the people involved.</p>
+        </div>
+    </section>
+
+
+    <!-- ─── Skills — Split into two groups ───────────────── -->
+    <section class="skills-section">
+        <p class="section-eyebrow reveal">Toolkit</p>
+        <h2 class="section-heading reveal delay-1">
+            Skills &amp; Tools</h2>
+
+        <!-- Group 1: Data & Tech -->
+        <div class="skill-group reveal delay-2">
+            <p class="skill-group-label">Data &amp; Tech</p>
+            <div class="chips">
+                <span class="chip tech">SQL</span>
+                <span class="chip tech">Tableau</span>
+                <span class="chip tech">Power BI</span>
+                <span class="chip tech">Python</span>
+                <span class="chip tech">GA4</span>
+                <span class="chip tech">Hadoop</span>
+                <span class="chip tech">Spark</span>
+                <span class="chip tech">Neo4j</span>
+                <span class="chip tech">Azure OpenAI</span>
+            </div>
+        </div>
+
+        <!-- Group 2: Business Analysis -->
+        <div class="skill-group reveal delay-3">
+            <p class="skill-group-label">Business Analysis</p>
+            <div class="chips">
+                <span class="chip ba">Requirements elicitation</span>
+                <span class="chip ba">User stories</span>
+                <span class="chip ba">Business case structuring</span>
+                <span class="chip ba">BPMN 2.0</span>
+            </div>
+        </div>
+        <!-- Group 3: Digital Marketing -->
+        <div class="skill-group reveal delay-3">
+            <p class="skill-group-label">Digital Marketing</p>
+            <div class="chips">
+                <span class="chip">Meta Business Suite</span>
+                <span class="chip">Google Ads</span>
+                <span class="chip">SEO / SEM</span>
+                <span class="chip">A/B Testing</span>
+                <span class="chip">Looker Studio</span>
+                <span class="chip">KPI Design</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ─── Signoff / CTA ─────────────────────────────────── -->
+    <section class="about-signoff reveal">
+        <div class="about-signoff-rule"></div>
+
+        <div class="about-signoff-inner">
+            <p class="section-eyebrow">The Next Step</p>
+
+            <h2 class="about-signoff-heading">
+                Let's <span class="accent">connect</span> .
+            </h2>
+
+            <p class="about-signoff-body">
+                I am currently open to professional networking and discussing new opportunities within the tech business
+                landscape.
+            </p>
+
+            <div class="about-signoff-cta">
+                <a href="https://linkedin.com/in/dimitris-topalidis-b46761214/" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-white btn-magnetic">
+                    Connect on LinkedIn ↗
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Footer ──────────────────────────────────────────── -->
+    <footer>
+        <span>© 2026 Portfolio</span>
+        <a href="index.html#work">View my work →</a>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

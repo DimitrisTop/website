@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://*.tableau.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.tableau.com https://placehold.co data:; frame-src https://*.tableau.com; connect-src 'self' https://*.tableau.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM Workforce Attrition Analysis · Business Analyst Case Study · Portfolio</title>
+    <meta name="description"
+        content="Case study: Analyzed IBM employee attrition patterns to identify key drivers of workforce turnover, estimate financial impact, and inform retention strategy — using Tableau as the delivery layer.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- ── Custom Cursor ──────────────────────────────────── -->
+    <div id="c-ring" aria-hidden="true"></div>
+    <div id="c-dot" aria-hidden="true"></div>
+
+    <!-- ── Floating Pill Nav ──────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="logo">Dimitris<span style="color: var(--green);">.</span>Topalidis</a>
+        <div class="nav-links">
+            <a href="index.html#work">Work</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+    </div>
+
+
+    <!-- ── Case Study Hero ────────────────────────────────── -->
+    <header class="cs-hero">
+        <!-- Using the Tableau public static image as a subtle dark-blended backdrop -->
+        <!-- <img class="cs-hero-bg"
+            src="https://public.tableau.com/static/images/_I/_IBM_Attrition/Dashboard3/1.png"
+            alt="" aria-hidden="true"> -->
+
+        <div class="cs-hero-inner">
+            <div class="reveal">
+                <a href="index.html#work" class="back-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    All Work
+                </a>
+            </div>
+
+            <div class="cs-meta reveal delay-1">
+                <span class="cs-badge">Case Study</span>
+                <span class="cs-tag">Role: Business Analyst</span>
+                <span class="cs-tag">Tableau</span>
+                <span class="cs-tag">IBM Dataset</span>
+                <span class="cs-tag">Data Storytelling</span>
+            </div>
+
+            <h1 class="reveal delay-2">IBM Workforce Attrition<br>Analysis</h1>
+        </div>
+    </header>
+
+
+    <!-- ── KPI Strip ──────────────────────────────────────── -->
+    <div class="kpi-strip" role="list" aria-label="Key results">
+        <div class="kpi-block reveal" role="listitem">
+            <div class="kpi-val">1,470</div>
+            <div class="kpi-lbl">Employees Analyzed</div>
+            <div class="kpi-desc">IBM HR dataset spanning Sales, R&amp;D, and HR — 35 attributes per employee record
+            </div>
+        </div>
+        <div class="kpi-block reveal delay-1" role="listitem">
+            <div class="kpi-val">16.1%</div>
+            <div class="kpi-lbl">Attrition Rate</div>
+            <div class="kpi-desc">237 employees left — the analysis identified why, when, and at what cost</div>
+        </div>
+        <div class="kpi-block reveal delay-2" role="listitem">
+            <div class="kpi-val">$6.8M+</div>
+            <div class="kpi-lbl">Quantified Churn Cost</div>
+            <div class="kpi-desc">Financial impact mapped across income tiers and departments to prioritize intervention
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ── Article ────────────────────────────────────────── -->
+    <article class="article">
+
+        <!-- 01 The Problem -->
+        <section class="article-section reveal" aria-labelledby="s-problem">
+            <h2 id="s-problem">01 · The Problem</h2>
+            <p>
+                Employee attrition is consistently underestimated as a business risk. The visible cost — a vacancy —
+                is only the starting point. The real cost includes productivity loss during the gap, onboarding overhead
+                for the replacement, and the erosion of institutional knowledge that is never formally documented.
+            </p>
+            <p>
+                Without a structured analysis, organizations treat attrition reactively — responding to departures
+                rather than preventing them. Retention budgets get allocated based on assumption, not evidence.
+                The question that needs an answer is not just <em>“who left?”</em> but
+                <em>“why, when, how much did it cost, and which segment do we address first?”</em>
+            </p>
+            <div class="callout reveal delay-1">
+                The organization already had the data. The gap was a structured framework for turning it into
+                a decision — not a report.
+            </div>
+        </section>
+
+
+        <!-- 02 The Analytical Approach -->
+        <section class="article-section reveal" aria-labelledby="s-thinking">
+            <h2 id="s-thinking">02 · The Analytical Approach</h2>
+            <p>
+                The starting point was not the data — it was the decisions the business needed to make.
+                I structured the analysis around four precise business questions, each designed to produce
+                a finding an HR director or CFO could act on directly:
+            </p>
+
+            <ul style="margin-top: 1.5rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li style="color: var(--text-2); font-size: 0.9rem; line-height: 1.6;">
+                    <strong style="color: var(--text-1);">Who is leaving?</strong> — Which income group &amp; department
+                    generates the highest churn cost, and where should budget be allocated first?
+                </li>
+                <li style="color: var(--text-2); font-size: 0.9rem; line-height: 1.6;">
+                    <strong style="color: var(--text-1);">When do they leave?</strong> — At what tenure milestone does
+                    attrition peak? Is this a retention problem or an onboarding problem?
+                </li>
+                <li style="color: var(--text-2); font-size: 0.9rem; line-height: 1.6;">
+                    <strong style="color: var(--text-1);">Why — Environment?</strong> — Does low environmental
+                    satisfaction predict departure? Can cultural interventions reduce attrition independently of pay?
+                </li>
+                <li style="color: var(--text-2); font-size: 0.9rem; line-height: 1.6;">
+                    <strong style="color: var(--text-1);">Why — Lifestyle?</strong> — Does commute distance compound
+                    work-life imbalance into a predictable, quantifiable attrition risk?
+                </li>
+            </ul>
+        </section>
+
+
+        <!-- 03 The Visualizations -->
+        <section class="article-section reveal" aria-labelledby="s-solution">
+            <h2 id="s-solution">03 · The Four Views</h2>
+            <p>
+                Each visualization was built to surface one decision-relevant finding. The visual encoding
+                (color intensity, Pareto curves, heatmap saturation) communicates severity and priority
+                — not just pattern. The dashboard is designed for exploration by non-analysts: a CFO or
+                HR Director can filter by department or income group and immediately see where the cost is concentrated.
+            </p>
+
+            <div class="chart-gallery">
+
+                <figure class="reveal lightbox-trigger">
+                    <img src="screenshots/ibm-chart-dept.png"
+                        alt="Horizontal bar chart: Average Attrition Rate by Environmental Satisfaction level"
+                        width="600" height="380" loading="lazy">
+                    <figcaption>Fig 1 — Is the Department driving people away? — click to expand
+                    </figcaption>
+                </figure>
+
+                <figure class="reveal delay-1 lightbox-trigger">
+                    <img src="screenshots/ibm-chart-time.png"
+                        alt="Pareto combo chart: Attrition Count and Running % by Years at Company" width="600"
+                        height="380" loading="lazy">
+                    <figcaption>Fig 2 — When do they leave? — click to expand</figcaption>
+                </figure>
+
+                <figure class="reveal delay-1 lightbox-trigger">
+                    <img src="screenshots/ibm-chart-cost.png"
+                        alt="Stacked horizontal bar: Churn Sunk Cost by Income Group and Department" width="600"
+                        height="380" loading="lazy">
+                    <figcaption>Fig 3 — Churn Sunk Cost per Income Group — click to expand
+                    </figcaption>
+                </figure>
+
+                <figure class="reveal delay-2 lightbox-trigger">
+                    <img src="screenshots/ibm-chart-commute.png"
+                        alt="Heatmap matrix: Avg. Attrition Rate by Work-Life Balance score and Commute Risk"
+                        width="600" height="380" loading="lazy">
+                    <figcaption>Fig 4 — Is commute killing work-life balance? — click to expand</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+
+        <!-- 04 Live Interactive Dashboard -->
+        <section class="article-section reveal" aria-labelledby="s-dashboard">
+            <h2 id="s-dashboard">04 · Live Interactive Dashboard</h2>
+            <p>
+                The full dashboard brings all four views together with cross-filter interactivity — selecting a
+                department or income group updates every chart simultaneously. It is designed for executive
+                presentation: filter by department or years at company to drill into the specific segments
+                that carry the highest attrition risk.
+            </p>
+
+            <!-- Dashboard Preview — screenshot + CTA-->
+            <div class="dashboard-preview reveal">
+
+                <!-- Mock browser chrome bar -->
+                <div class="dashboard-chrome" aria-hidden="true">
+                    <span class="chrome-dot"></span>
+                    <span class="chrome-dot"></span>
+                    <span class="chrome-dot"></span>
+                    <span class="chrome-url">public.tableau.com · IBM Attrition Dashboard</span>
+                </div>
+
+                <!-- Screenshot with hover overlay -->
+                <a href="https://public.tableau.com/views/_IBM_Attrition/Dashboard3?:language=en-US&:display_count=n&:origin=viz_share_link"
+                    target="_blank" rel="noopener noreferrer" class="dashboard-preview-link"
+                    aria-label="Open IBM Attrition Dashboard on Tableau Public">
+                    <img src="screenshots/ibm-dashboard.png"
+                        alt="IBM Workforce Attrition &amp; Financial Impact — Tableau Dashboard Overview"
+                        class="dashboard-screenshot" width="1200" height="750" loading="lazy">
+                    <div class="dashboard-overlay">
+                        <span class="dashboard-overlay-cta">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Open Live Dashboard
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Footer strip -->
+                <div class="view-dashboard-cta">
+                    <p>Interactive · Filter by department, tenure, income group</p>
+                    <a href="https://public.tableau.com/views/_IBM_Attrition/Dashboard3?:language=en-US&:display_count=n&:origin=viz_share_link"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-white">
+                        Open Full Dashboard ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- 05 Key Takeaway -->
+        <section class="article-section reveal" aria-labelledby="s-takeaway">
+            <h2 id="s-takeaway">05 · Key Findings &amp; Takeaway</h2>
+            <p>
+                <strong>80% of leavers exit within their first 5 years</strong>, with attrition peaking at Year 1
+                (59 employees). This reframes the problem: it is an onboarding and early-tenure risk before it
+                becomes a general retention issue. The intervention point is the first 12 months, not an
+                organization-wide
+                culture change.
+            </p>
+            <p>
+                Low environmental satisfaction produces a <strong>25.4% attrition rate</strong> — nearly double
+                high-satisfaction environments. The highest single financial exposure sits in
+                <strong>Senior/Manager Sales roles ($1.77M sunk cost)</strong> where replacing one person carries
+                disproportionate knowledge and relationship risk.
+            </p>
+            <div class="callout reveal delay-1">
+                The work here was not building a dashboard. It was identifying the right business questions,
+                structuring the analysis to answer them, and delivering findings in a format that supports
+                a real decision — not just a meeting.
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+                <a href="index.html#work" class="back-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to all work
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ── Next Project Module ─────────────────────────── -->
+        <div class="next-project-module reveal"
+            style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+            <p class="section-eyebrow">Up Next</p>
+            <a href="project_2.html" class="bento-card glow-blue"
+                style="min-height: auto; padding: 2rem; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
+                <div>
+                    <span class="card-tag" style="color: var(--text-2);">AI · Azure · PwC Hackathon</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem; color: var(--text-1);">Outfit Buddy: AI Stylist
+                    </h3>
+                </div>
+                <div class="card-arrow"
+                    style="position: relative; bottom: auto; right: auto; transform: none; background: transparent; border-color: var(--border-hi);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+    </article>
+
+    <!-- Scroll Progress Back to Top -->
+    <div class="progress-wrap" id="progressWrap">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <div class="arrow-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- ── Footer ─────────────────────────────────────────── -->
+    <footer>
+        <span>© 2026 Dimitris Topalidis · Built with logic.</span>
+        <a href="index.html#work">All work →</a>
+    </footer>
+
+
+    <!-- ── Lightbox Overlay ──────────────────────────────── -->
+    <div id="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button id="lightbox-close" aria-label="Close image preview">&times;</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self' https://*.tableau.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.tableau.com https://placehold.co data:; frame-src https://*.tableau.com; connect-src 'self' https://*.tableau.com; object-src 'none'; base-uri 'self'; form-action 'none';">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timalfes: E-Commerce Business Process Implementation · Case Study · Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <!-- ── Custom Cursor ──────────────────────────────────── -->
+    <div id="c-ring" aria-hidden="true"></div>
+    <div id="c-dot" aria-hidden="true"></div>
+
+    <!-- ─── Floating Pill Nav ──────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="logo">Dimitris<span style="color: var(--green);">.</span>Topalidis</a>
+        <div class="nav-links">
+            <a href="index.html#work">Work</a>
+            <a href="about.html">About</a>
+        </div>
+        <button class="hamburger" id="ham" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <!-- ─── Case Study Hero ─────────────────────────────────── -->
+    <header class="cs-hero">
+        <img class="cs-hero-bg" alt="" aria-hidden="true">
+        <div class="cs-hero-inner">
+            <div class="reveal">
+                <a href="index.html" class="back-btn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    All Work
+                </a>
+            </div>
+
+            <div class="cs-meta reveal delay-1">
+                <span class="cs-badge">E-Commerce Implementation</span>
+                <span class="cs-tag">Role: Business &amp; Technical Coordinator</span>
+                <span class="cs-tag">Process Mapping</span>
+                <span class="cs-tag">User Journey</span>
+                <span class="cs-tag">MarTech Integration</span>
+            </div>
+
+            <h1 class="reveal delay-2">Timalfes:<br>Digital-First Brand Transition</h1>
+        </div>
+    </header>
+
+    <!-- ─── KPI Strip ───────────────────────────────────────── -->
+    <div class="kpi-strip" role="list" aria-label="Key results">
+        <div class="kpi-block reveal" role="listitem">
+            <div class="kpi-val">User Flow</div>
+            <div class="kpi-lbl">Journey Mapping</div>
+            <div class="kpi-desc">Mapped the end-to-end customer journey from product discovery to checkout completion
+            </div>
+        </div>
+        <div class="kpi-block reveal delay-1" role="listitem">
+            <div class="kpi-val">Process</div>
+            <div class="kpi-lbl">Alignment</div>
+            <div class="kpi-desc">Aligned platform functionality with business needs: order management, catalog sync,
+                and tracking</div>
+        </div>
+        <div class="kpi-block reveal delay-2" role="listitem">
+            <div class="kpi-val">Full-Funnel</div>
+            <div class="kpi-lbl">Data Setup</div>
+            <div class="kpi-desc">GTM and Meta Pixel configured to track customer actions and support future marketing
+                decisions</div>
+        </div>
+    </div>
+
+    <!-- ─── Article ─────────────────────────────────────────── -->
+    <article class="article">
+
+        <section class="article-section reveal">
+            <h2>01 · Business Context</h2>
+            <p>
+                Timalfes is a premium brand operating in scientific cosmetology and pure apiary products.
+                They had an established physical presence but no digital channel aligned with their brand quality.
+                The project goal was not to <em>build a website</em> — it was to design and implement a
+                <strong>customer-facing process</strong> that reflects how the business actually operates:
+                from product selection and ordering through to fulfillment and post-sale communication.
+            </p>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>02 · Process Mapping &amp; Requirements</h2>
+            <p>
+                Before any implementation, I mapped the core business processes end-to-end:
+            </p>
+            <ul
+                style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Customer Journey:</strong>
+                    From first visit (product discovery) through selection, checkout, and order confirmation.
+                    Identified friction points in the default WooCommerce flow that needed to be resolved before launch.
+                </li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Order Management Process:</strong>
+                    Mapped how orders enter the system, how inventory state changes, and what the operator needs
+                    to see to fulfill orders accurately — aligning the platform configuration with actual back-office
+                    workflow.
+                </li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Catalog &amp; Data Sync:</strong>
+                    Defined requirements for the product feed: which fields are mandatory, how pricing and
+                    availability propagate to advertising channels, and what the update cadence needs to be.
+                </li>
+            </ul>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>03 · Implementation &amp; Integration</h2>
+            <p>With the process requirements clear, implementation focused on aligning the platform with those needs:
+            </p>
+            <ul style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem;">
+                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Checkout Optimization:</strong>
+                    Refined the checkout flow to reduce steps and user confusion, directly reducing drop-off risk.</li>
+                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Full-Funnel Tracking:</strong>
+                    Configured GTM and Meta Pixel to track purchase events, cart additions, and checkout funnel stages —
+                    providing the data layer for future marketing decisions.</li>
+                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Catalog Automation:</strong> Set up
+                    an automated XML product feed to keep advertising channels synchronized with live inventory and
+                    pricing.</li>
+            </ul>
+
+            <figure class="cs-figure reveal-fig">
+                <img src="/images_portfolio/timalfes.png" alt="Timalfes e-commerce storefront screenshot" width="860"
+                    height="420" loading="lazy">
+                <figcaption>Fig 1 — Timalfes e-commerce storefront: customer-facing implementation aligned with the
+                    mapped order and fulfillment process.</figcaption>
+            </figure>
+        </section>
+
+        <section class="article-section reveal">
+            <h2>04 · Handover &amp; Status</h2>
+            <p>
+                This was a fixed-scope digital transformation project. Following deployment, I structured the
+                handover documentation to ensure the internal team could manage the platform independently —
+                covering the admin workflows, tracking configuration, and catalog maintenance process.
+            </p>
+            <div class="callout reveal"
+                style="border-color: rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); padding: 15px; border-radius: 8px; font-size: 0.9rem;">
+                <strong>Note:</strong> Active technical support concluded in early 2025. Current site performance
+                reflects post-handover management.
+            </div>
+        </section>
+
+        <!-- ─── Next Project Module ─────────────────────────────── -->
+        <div class="next-project-module reveal"
+            style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+            <p class="section-eyebrow">Up Next</p>
+            <a href="index.html#work" class="bento-card glow-green"
+                style="min-height: auto; padding: 2rem; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
+                <div>
+                    <span class="card-tag" style="color: var(--text-2);">All Projects</span>
+                    <h3 style="font-size: 1.5rem; margin-top: 0.5rem; color: var(--text-1);">Back to Selected Projects
+                    </h3>
+                </div>
+                <div class="card-arrow"
+                    style="position: relative; bottom: auto; right: auto; transform: none; background: transparent; border-color: var(--border-hi);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </article>
+
+    <!-- Scroll Progress Back to Top -->
+    <div class="progress-wrap" id="progressWrap">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <div class="arrow-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 15l-6-6-6 6" />
+            </svg>
+        </div>
+    </div>
+
+
+    <!-- ─── Footer ──────────────────────────────────────────── -->
+    <footer>
+        <span>© 2026 Portfolio</span>
+        <a href="index.html">All projects →</a>
+    </footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
