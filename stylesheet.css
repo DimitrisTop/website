@@ -69,26 +69,7 @@ body {
 
 /* ── POINTER  ──────────────────────────────── */
 @media (pointer: fine) {
-
-    body,
-    div,
-    section,
-    article,
-    header,
-    footer,
-    main,
-    aside,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    li,
-    ul,
-    ol {
+    * {
         cursor: none !important;
     }
 }
@@ -1254,11 +1235,11 @@ footer a:hover {
    ============================================================ */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex !important;
+        display: flex;
     }
 
     .nav-links {
-        display: none !important;
+        display: none;
     }
 
     .bento-grid {
@@ -1307,10 +1288,6 @@ footer a:hover {
 }
 
 @media (min-width: 769px) {
-    .hamburger {
-        display: none !important;
-    }
-
     .mobile-menu {
         display: none !important;
     }
@@ -1747,28 +1724,9 @@ footer a:hover {
 /* ── Custom Cursor ─────────────────────────────────────── */
 @media (pointer: fine) {
 
-    body,
-    div,
-    section,
-    article,
-    header,
-    footer,
-    main,
-    aside,
-    span,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    li,
-    ul,
-    ol,
-    figure,
-    figcaption,
-    time {
+    *,
+    *::before,
+    *::after {
         cursor: none !important;
     }
 
