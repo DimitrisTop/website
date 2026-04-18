@@ -55,36 +55,38 @@
             </div>
 
             <div class="cs-meta reveal delay-1">
-                <span class="cs-badge">E-Commerce Implementation</span>
-                <span class="cs-tag">Role: Business &amp; Technical Coordinator</span>
-                <span class="cs-tag">Process Mapping</span>
-                <span class="cs-tag">User Journey</span>
-                <span class="cs-tag">MarTech Integration</span>
+                <span class="cs-badge">E-Commerce Setup</span>
+                <span class="cs-tag">Role: Web Development & Logic Design</span>
+                <span class="cs-tag">Checkout Logic</span>
+                <span class="cs-tag">Storefront Setup</span>
+                <span class="cs-tag">Data Tracking</span>
             </div>
 
-            <h1 class="reveal delay-2">Timalfes:<br>Digital-First Brand Transition</h1>
+            <h1 class="reveal delay-2">Timalfes:<br>E-Commerce Setup & Tracking</h1>
         </div>
     </header>
+
 
     <!-- ─── KPI Strip ───────────────────────────────────────── -->
     <div class="kpi-strip" role="list" aria-label="Key results">
         <div class="kpi-block reveal" role="listitem">
-            <div class="kpi-val">User Flow</div>
-            <div class="kpi-lbl">Journey Mapping</div>
-            <div class="kpi-desc">Mapped the end-to-end customer journey from product discovery to checkout completion
+            <div class="kpi-val">Storefront</div>
+            <div class="kpi-lbl">User Flow</div>
+            <div class="kpi-desc">Built a clear, simple path from product discovery to checkout completion.
             </div>
         </div>
         <div class="kpi-block reveal delay-1" role="listitem">
-            <div class="kpi-val">Process</div>
-            <div class="kpi-lbl">Alignment</div>
-            <div class="kpi-desc">Aligned platform functionality with business needs: order management, catalog sync,
-                and tracking</div>
+            <div class="kpi-val">Operations</div>
+            <div class="kpi-lbl">Platform Setup</div>
+            <div class="kpi-desc">Configured essential features: product catalogs, order management, and custom
+                invoicing logic.
+            </div>
         </div>
         <div class="kpi-block reveal delay-2" role="listitem">
-            <div class="kpi-val">Full-Funnel</div>
+            <div class="kpi-val">Tracking</div>
             <div class="kpi-lbl">Data Setup</div>
-            <div class="kpi-desc">GTM and Meta Pixel configured to track customer actions and support future marketing
-                decisions</div>
+            <div class="kpi-desc">Configured GTM and Meta Pixel to connect marketing efforts with actual sales data.
+            </div>
         </div>
     </div>
 
@@ -92,52 +94,56 @@
     <article class="article">
 
         <section class="article-section reveal">
-            <h2>01 · Business Context</h2>
+            <h2>01 · Concept</h2>
             <p>
-                Timalfes is a premium brand operating in scientific cosmetology and pure apiary products.
-                They had an established physical presence but no digital channel aligned with their brand quality.
-                The project goal was not to <em>build a website</em> — it was to design and implement a
-                <strong>customer-facing process</strong> that reflects how the business actually operates:
-                from product selection and ordering through to fulfillment and post-sale communication.
+                Timalfes is a premium brand specializing in scientific <em>cosmetology</em> and <em>pure apiary
+                    products</em>. The goal was to build a clean, reliable digital storefront that reflects their
+                <strong>high-quality</strong> physical products, without overcomplicating the technical setup.
             </p>
         </section>
 
         <section class="article-section reveal">
-            <h2>02 · Process Mapping &amp; Requirements</h2>
+            <h2>02 · The Approach</h2>
             <p>
-                Before any implementation, I mapped the core business processes end-to-end:
+                The core decision was prioritizing business value over custom engineering.
+                Instead of writing code from scratch, I selected established tools that allowed me
+                to minimize development time and maximize focus on the underlying data architecture.
             </p>
             <ul
                 style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem;">
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Customer Journey:</strong>
-                    From first visit (product discovery) through selection, checkout, and order confirmation.
-                    Identified friction points in the default WooCommerce flow that needed to be resolved before launch.
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Platform Selection:</strong>
+                    Chose WordPress as a stable, scalable foundation that the client's internal team could easily adopt
+                    and manage post-handover.
                 </li>
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Order Management Process:</strong>
-                    Mapped how orders enter the system, how inventory state changes, and what the operator needs
-                    to see to fulfill orders accurately — aligning the platform configuration with actual back-office
-                    workflow.
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Rapid Prototyping:</strong>
+                    Leveraged Elementor's modular system to quickly build, test, and iterate on the storefront layout
+                    without getting bogged down in syntax.
                 </li>
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Catalog &amp; Data Sync:</strong>
-                    Defined requirements for the product feed: which fields are mandatory, how pricing and
-                    availability propagate to advertising channels, and what the update cadence needs to be.
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Logic Over Code:</strong>
+                    By reducing the time spent on basic web development, I was able to dedicate the project's focus to
+                    establishing a robust tracking setup and functional user flows.
                 </li>
             </ul>
         </section>
 
         <section class="article-section reveal">
-            <h2>03 · Implementation &amp; Integration</h2>
-            <p>With the process requirements clear, implementation focused on aligning the platform with those needs:
+            <h2>03 · My Contribution</h2>
+            <p>My role involved handling the basic web development, the visual setup, and solving specific user-flow
+                problems:
             </p>
             <ul style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem;">
                 <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Checkout Optimization:</strong>
-                    Refined the checkout flow to reduce steps and user confusion, directly reducing drop-off risk.</li>
-                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Full-Funnel Tracking:</strong>
-                    Configured GTM and Meta Pixel to track purchase events, cart additions, and checkout funnel stages —
-                    providing the data layer for future marketing decisions.</li>
-                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Catalog Automation:</strong> Set up
-                    an automated XML product feed to keep advertising channels synchronized with live inventory and
-                    pricing.</li>
+                    To reduce friction during purchases, I implemented a custom PHP script so that corporate billing
+                    details (invoice fields) are hidden by default and only appear via a dropdown if the user actively
+                    selects the invoice option.</li>
+                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Storefront Setup:</strong>
+                    Built and customized the page layouts using Elementor, ensuring the design matched the brand's
+                    premium identity.
+                </li>
+                <li style="line-height: 1.8;"><strong style="color: var(--text-1);">Tracking & Feeds:</strong>
+                    Configured Google Tag Manager (GTM) and set up XML product feeds to connect the site's inventory
+                    with social media marketing campaigns.
+                </li>
             </ul>
             <figure class="cs-figure reveal-fig">
                 <img src="images_portfolio/timalfes.png" alt="Timalfes e-commerce storefront screenshot" width="860"
