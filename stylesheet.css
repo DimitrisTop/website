@@ -69,7 +69,26 @@ body {
 
 /* ── POINTER  ──────────────────────────────── */
 @media (pointer: fine) {
-    * {
+
+    body,
+    div,
+    section,
+    article,
+    header,
+    footer,
+    main,
+    aside,
+    span,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    ul,
+    ol {
         cursor: none !important;
     }
 }
@@ -1235,11 +1254,11 @@ footer a:hover {
    ============================================================ */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links {
-        display: none;
+        display: none !important;
     }
 
     .bento-grid {
@@ -1288,6 +1307,10 @@ footer a:hover {
 }
 
 @media (min-width: 769px) {
+    .hamburger {
+        display: none !important;
+    }
+
     .mobile-menu {
         display: none !important;
     }
@@ -1724,9 +1747,28 @@ footer a:hover {
 /* ── Custom Cursor ─────────────────────────────────────── */
 @media (pointer: fine) {
 
-    *,
-    *::before,
-    *::after {
+    body,
+    div,
+    section,
+    article,
+    header,
+    footer,
+    main,
+    aside,
+    span,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    ul,
+    ol,
+    figure,
+    figcaption,
+    time {
         cursor: none !important;
     }
 
@@ -2085,7 +2127,7 @@ footer a:hover {
     background: #0d0d10;
     position: relative;
     box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.04),
         0 24px 80px rgba(0, 0, 0, 0.55);
 }
 
@@ -2106,9 +2148,17 @@ footer a:hover {
     flex-shrink: 0;
 }
 
-.chrome-dot:nth-child(1) { background: #ff5f57; }
-.chrome-dot:nth-child(2) { background: #febc2e; }
-.chrome-dot:nth-child(3) { background: #28c840; }
+.chrome-dot:nth-child(1) {
+    background: #ff5f57;
+}
+
+.chrome-dot:nth-child(2) {
+    background: #febc2e;
+}
+
+.chrome-dot:nth-child(3) {
+    background: #28c840;
+}
 
 .chrome-url {
     margin-left: 0.75rem;
@@ -2134,7 +2184,7 @@ footer a:hover {
     width: 100%;
     height: auto;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.4s ease;
+        filter 0.4s ease;
     filter: brightness(0.92);
 }
 
