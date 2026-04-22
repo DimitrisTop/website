@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ── 10. LIGHTBOX (project_1.html only) ──────────────────────
    Opens chart images in a full-screen overlay when clicked.
    Guarded so it silently skips on all other pages.            */
-ready(function () {
+document.addEventListener('DOMContentLoaded', function () {
   var overlay  = document.getElementById('lightbox-overlay');
   if (!overlay) return;
 
@@ -353,4 +353,22 @@ ready(function () {
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
+});
+
+/* ── 11. OBFUSCATED DOWNLOAD LINK (index.html only) ────────
+   Decodes Base64 string in data attribute to prevent bot scraping */
+document.addEventListener('DOMContentLoaded', function () {
+  var cvBtn = document.getElementById('btn-cv');
+  if (cvBtn) {
+    cvBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var secureUrl = cvBtn.getAttribute('data-secure-url');
+      if (secureUrl) {
+        // Decode the URL
+        var decodedUrl = atob(secureUrl);
+        // Open the URL or trigger download
+        window.open(decodedUrl, '_blank');
+      }
+    });
+  }
 });

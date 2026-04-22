@@ -91,17 +91,17 @@
             <ul
                 style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem;">
                 <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Problem Framing:</strong>
-                    Defined the product concept and the core use case. Established which user inputs (wardrobe,
-                    weather, plans) were essential and how they relate to each other in the recommendation logic.
+                    Defined the product concept and the core use case. Established which user inputs (wardrobe, weather,
+                    plans) were essential and how they relate to each other in the recommendation logic.
                 </li>
                 <li style="line-height: 1.6;"><strong style="color: var(--text-1);">User Interaction Flow:</strong>
-                    Mapped the end-to-end interaction: from user onboarding and wardrobe input through to
-                    context-aware recommendation delivery. Identified the decision points and data dependencies at
-                    each step.
+                    Mapped the end-to-end interaction: from user onboarding and wardrobe input through to context-aware
+                    recommendation delivery. Identified the decision points and data dependencies at each step.
                 </li>
                 <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Process Orchestration:</strong>
-                    Structured the system logic connecting multiple data sources — user profile, wardrobe inventory,
-                    live weather, and calendar context — and coordinated how they feed into the AI recommendation layer.
+                    Designed the proprietary logic connecting multiple data sources. Created a custom rating system
+                    (evaluating Formality, Warmth, and Comfort) to translate user wardrobe, live weather, and calendar
+                    context into actionable parameters for the AI recommendation layer.
                 </li>
             </ul>
         </section>
@@ -109,19 +109,25 @@
         <section class="article-section reveal">
             <h2>03 · System Logic &amp; Architecture</h2>
             <p>
-                The technical implementation used <strong>Microsoft Azure</strong> as the orchestration backbone.
-                The key design decision was modularity: rather than a monolithic backend, each data source
-                (weather API, user input, wardrobe database) was isolated as a separate component.
-                This meant a failure in the weather API would not take down the core recommendation engine.
+                The technical implementation prioritized modular API integration and a custom data-scoring system.
+                Rather than relying solely on AI prompts, we built a deterministic scoring matrix to ensure consistent
+                recommendations.
             </p>
             <ul
                 style="color: var(--text-2); margin-left: 1.5rem; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure OpenAI (GPT-4):</strong>
-                    Stylistic analysis and natural-language interaction.</li>
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure Logic Apps:</strong>
-                    Orchestrating the flow between user input, environmental data, and the recommendation engine.</li>
-                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Azure Functions:</strong> Processing
-                    image metadata for outfit context recognition.</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Context Integration Engine:</strong>
+                    Engineered the logic to aggregate disparate data streams, cross-referencing live environment data
+                    (Weather API) and user schedule (Outlook Calendar API).</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Custom Scoring Matrix:</strong>
+                    Designed a data schema evaluating items across three dynamic parameters: Formality, Warmth, and
+                    Comfort. This acts as the translation layer, allowing the AI to filter a "silk shirt" for a "Dinner
+                    Date on a rainy 13°C evening."</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">AI & Metadata Automation:</strong>
+                    Integrated Image Recognition to automate user onboarding ("Scan with AI"), extracting metadata and
+                    calculating
+                    initial slider ratings.</li>
+                <li style="line-height: 1.6;"><strong style="color: var(--text-1);">Infrastructure:</strong>
+                    The application was securely hosted and deployed on Microsoft Azure.</li>
             </ul>
 
             <figure class="cs-figure reveal-fig">
