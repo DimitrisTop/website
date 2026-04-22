@@ -319,10 +319,10 @@ document.addEventListener('DOMContentLoaded', function () {
    Opens chart images in a full-screen overlay when clicked.
    Guarded so it silently skips on all other pages.            */
 document.addEventListener('DOMContentLoaded', function () {
-  var overlay  = document.getElementById('lightbox-overlay');
+  var overlay = document.getElementById('lightbox-overlay');
   if (!overlay) return;
 
-  var lb       = document.getElementById('lightbox-img');
+  var lb = document.getElementById('lightbox-img');
   var closeBtn = document.getElementById('lightbox-close');
 
   function openLightbox(src, alt) {
